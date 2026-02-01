@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Task Manager Batch 18</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="max-w-7xl mx-auto p-4 md:p-6">
+
+    <!-- HEADER -->
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center 
+              bg-white p-4 md:p-6 rounded-xl shadow gap-4">
+      <div>
+        <h1 class="text-xl font-bold text-blue-600">Task Manager Batch 18</h1>
+        <p class="text-sm">TO-DO LIST APP</p>
+        <p id="dateTime" class="text-sm text-gray-500"></p>
+      </div>
+
+      <div class="text-left md:text-right">
+        <p class="font-medium">Welcome, <span id="userName"></span></p>
+        <p class="text-sm text-gray-500">Jabatan: <span id="userRole"></span></p>
+        <button onclick="logout()" class="bg-red-500 text-white px-4 py-2 rounded-lg mt-2 w-full md:w-auto">
+          Logout
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+
+      <!-- ADD TASK -->
+      <div class="bg-white p-4 md:p-6 rounded-xl shadow md:col-span-2">
+        <h2 class="font-semibold mb-3">Tambah Tugas Baru</h2>
+
+        <input id="taskTitle" class="w-full border p-3 rounded-lg mb-3" placeholder="Tambahkan tugas baru...">
+
+        <input id="taskDate" type="date" class="w-full border p-3 rounded-lg mb-3">
+
+        <select id="taskPriority" class="w-full border p-3 rounded-lg mb-3">
+          <option>Rendah</option>
+          <option>Sedang</option>
+          <option>Tinggi</option>
+        </select>
+
+        <button onclick="addTask()" class="w-full bg-green-500 text-white py-3 rounded-lg">
+          Tambah Tugas
+        </button>
+      </div>
+
+      <!-- STATS / FILTER -->
+      <div class="space-y-3">
+        <div id="filter-all" onclick="setFilter('all')" class="filter-card bg-blue-100 p-4 rounded-xl cursor-pointer 
+               hover:ring active:scale-95 transition">
+          Total Tugas
+          <div id="totalTask" class="text-2xl font-bold">0</div>
+        </div>
+
+        <div id="filter-active" onclick="setFilter('active')" class="filter-card bg-green-100 p-4 rounded-xl cursor-pointer 
+               hover:ring active:scale-95 transition">
+          Tugas Aktif
+          <div id="activeTask" class="text-2xl font-bold">0</div>
+        </div>
+
+        <div id="filter-done" onclick="setFilter('done')" class="filter-card bg-purple-100 p-4 rounded-xl cursor-pointer 
+               hover:ring active:scale-95 transition">
+          Tugas Selesai
+          <div id="doneTask" class="text-2xl font-bold">0</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TASK LIST -->
+    <div class="bg-white mt-6 p-4 md:p-6 rounded-xl shadow">
+      <h2 class="font-semibold mb-4">Daftar Tugas</h2>
+      <div id="taskList"></div>
+
+      <button onclick="clearAll()" class="mt-6 bg-red-500 text-white px-6 py-3 rounded-lg 
+             w-full md:w-auto">
+        Hapus Semua Tugas
+      </button>
+    </div>
+
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Manager Batch 18</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center 
+         bg-cover bg-center px-4" style="background-image: url('img/bg3.jpg');">
+
+    
+    <!-- Card -->
+    <div class="relative bg-white w-full max-w-md p-6 sm:p-8 rounded-xl shadow-lg">
+
+        <h1 class="text-2xl sm:text-3xl font-bold text-center text-blue-600">
+            Task Manager Batch 18
+        </h1>
+
+        <p id="formTitle" class="text-center text-gray-500 mb-6">
+            Masuk ke akun
+        </p>
+
+        <form id="authForm" class="space-y-4">
+
+            <div id="nameField" class="hidden">
+                <label class="text-sm">Nama Lengkap</label>
+                <input id="name" class="w-full border p-3 rounded-lg">
+            </div>
+
+            <div>
+                <label class="text-sm">Email</label>
+                <input id="email" type="email" class="w-full border p-3 rounded-lg">
+            </div>
+
+            <div id="roleField" class="hidden">
+                <label class="text-sm">Jabatan</label>
+                <select id="role" class="w-full border p-3 rounded-lg">
+                    <option>Staff</option>
+                    <option>Supervisor</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                    <option>IT Support</option>
+                    <option>IT Web Developer</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="text-sm">Password</label>
+                <input id="password" type="password" class="w-full border p-3 rounded-lg">
+            </div>
+
+            <button class="w-full bg-blue-600 text-white py-3 rounded-lg">
+                <span id="btnText">Login</span>
+            </button>
+
+        </form>
+
+        <p class="text-center mt-4 text-sm">
+            <span id="toggleText">Belum punya akun?</span>
+            <button id="toggleBtn" class="text-blue-600 ml-1">Daftar</button>
+        </p>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
